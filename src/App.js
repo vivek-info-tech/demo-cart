@@ -1,24 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
+import Navbars from './Components/Navbars';
+
+import Login from './Components/Login';
+import Products from './Components/Products';
+import {BrowserRouter, Routes, Route,Link,} from 'react-router-dom'
+import Home from './Components/Home';
+import PrivateComponent from './Components/PrivateComponent';
+import CartCount from './Components/CartCount';
+import { useState } from 'react';
 
 function App() {
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Navbars/>
+    
+   <Routes>
+   <Route element={<PrivateComponent />}>
+   <Route exact path= '/' element={<Home/>} />
+  <Route exact path= 'products' element={<Products   />} />
+    <Route exact path= 'cart' element={<CartCount/>} />
+   </Route>
+   
+     <Route exact path='login' element={<Login/>} />
+     
+   </Routes>
+    </BrowserRouter>
+    
   );
 }
 
