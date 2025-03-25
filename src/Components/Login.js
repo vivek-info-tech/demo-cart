@@ -27,8 +27,9 @@ export default function Login() {
             })
         });
         result= await result.json();
-        console.log(result)
-        if(result.token){
+        // console.log(result)
+        // console.log(result.accessToken)
+        if(result.accessToken){
             localStorage.setItem('username',JSON.stringify(result.username));
             localStorage.setItem('token',JSON.stringify(result.token));
             navigate('/')
@@ -51,7 +52,15 @@ export default function Login() {
                     Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
                 </div>
                 <button className='btn btn-primary text-center  float-right my-5' onClick={handleLogin}>Login</button>
+
+                <div>
+                <p className=' text-lg-center'>User Name & Password for login</p>
+                <p className=' text-dark text-lg-center'>  User Name:  emilys <br / > Password: emilyspass</p>
+         
             </div>
+            </div>
+
+            
         </div>
     )
 }

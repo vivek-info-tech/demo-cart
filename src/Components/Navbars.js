@@ -14,7 +14,7 @@ export default function Navbars() {
   return (
     <div> <nav className="navbar navbar-expand-lg bg-body-tertiary">
     <div className="container-fluid justify-content-evenly">
-      <Link className="navbar-brand" to='/'>E-Kart</Link>
+      <Link className="navbar-brand" to='/'>Cart</Link>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -32,7 +32,7 @@ export default function Navbars() {
         
         <div className='mx-4'  style={{height:"0.2"}}>
         <Link to="cart"> <img src={Cart} alt=" Error" height="30rem" /></Link>
-         <sup className='bg-danger text-white' style={{width:"10"}}> 7</sup>
+         {/* <sup className='bg-danger text-white' style={{width:"10"}}> 7</sup> */}
         </div>
        
         <button className='btn btn-outline-primary '><Link className='nav-link' to='login' onClick={logout}>Logout</Link></button></>
